@@ -28,11 +28,11 @@ declare dso_local double @sqrt(double)
 
 define void @caller(i8* %arg, i8* %arg1) {
 bb:
-  call void @_Z17__enzyme_autodiffPvS_S_(i8* bitcast (void (double*, double*)* @func to i8*), i8* nonnull %arg, i8* nonnull %arg1, i8* nonnull %arg, i8* nonnull %arg1)
+  call void @_Z17__enzyme_fwddiffPvS_S_(i8* bitcast (void (double*, double*)* @func to i8*), i8* nonnull %arg, i8* nonnull %arg1, i8* nonnull %arg, i8* nonnull %arg1)
   ret void
 }
 
-declare dso_local void @_Z17__enzyme_autodiffPvS_S_(i8*, i8*, i8*, i8*, i8*)
+declare dso_local void @_Z17__enzyme_fwddiffPvS_S_(i8*, i8*, i8*, i8*, i8*)
 
 define internal void @func(double* %arg, double* %arg1) {
 entry:

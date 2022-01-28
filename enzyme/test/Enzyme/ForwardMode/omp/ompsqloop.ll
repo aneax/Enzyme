@@ -17,11 +17,11 @@ entry:
   %d_data = alloca [100 x double], align 16
   %0 = bitcast [100 x double]* %data to i8*
   %1 = bitcast [100 x double]* %d_data to i8*
-  call void @_Z17__enzyme_autodiffPvS_S_m(i8* bitcast (void (double*, i64)* @_ZL16LagrangeLeapFrogPdm to i8*), i8* nonnull %0, i8* nonnull %1, i64 100) #5
+  call void @_Z17__enzyme_fwddiffPvS_S_m(i8* bitcast (void (double*, i64)* @_ZL16LagrangeLeapFrogPdm to i8*), i8* nonnull %0, i8* nonnull %1, i64 100) #5
   ret i32 0
 }
 
-declare dso_local void @_Z17__enzyme_autodiffPvS_S_m(i8*, i8*, i8*, i64) local_unnamed_addr #2
+declare dso_local void @_Z17__enzyme_fwddiffPvS_S_m(i8*, i8*, i8*, i64) local_unnamed_addr #2
 
 ; Function Attrs: inlinehint nounwind uwtable mustprogress
 define internal void @_ZL16LagrangeLeapFrogPdm(double* %e_new, i64 %length) #3 {

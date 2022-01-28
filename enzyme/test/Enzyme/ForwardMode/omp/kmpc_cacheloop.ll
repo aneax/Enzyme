@@ -37,11 +37,11 @@ target triple = "x86_64-unknown-linux-gnu"
 
 define void @caller(i8* %in, i8* %din) local_unnamed_addr {
 entry:
-  call void (i8*, ...) @_Z17__enzyme_autodiffPvS_S_(i8* bitcast (void (i8*)* @_ZL16LagrangeLeapFrogRN4RAJA13TypedIndexSetIJNS_17TypedRangeSegmentIllEENS_16TypedListSegmentIlEENS_23TypedRangeStrideSegmentIllEEEEE to i8*), metadata !"enzyme_dup", i8* %in, i8* nonnull %din) #5
+  call void (i8*, ...) @_Z17__enzyme_fwddiffPvS_S_(i8* bitcast (void (i8*)* @_ZL16LagrangeLeapFrogRN4RAJA13TypedIndexSetIJNS_17TypedRangeSegmentIllEENS_16TypedListSegmentIlEENS_23TypedRangeStrideSegmentIllEEEEE to i8*), metadata !"enzyme_dup", i8* %in, i8* nonnull %din) #5
   ret void
 }
 
-declare void @_Z17__enzyme_autodiffPvS_S_(i8*, ...) 
+declare void @_Z17__enzyme_fwddiffPvS_S_(i8*, ...) 
 
 ; Function Attrs: inlinehint nounwind uwtable mustprogress
 define internal void @_ZL16LagrangeLeapFrogRN4RAJA13TypedIndexSetIJNS_17TypedRangeSegmentIllEENS_16TypedListSegmentIlEENS_23TypedRangeStrideSegmentIllEEEEE(i8* %iset) {
